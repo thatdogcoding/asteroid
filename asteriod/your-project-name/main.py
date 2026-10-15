@@ -32,10 +32,10 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                log_event("player_hit")
+                log_event("player_quit")
+                sys.exit()
         screen.fill("black")
         updatable.update(dt)
-        player.shot_timer -= dt
         for item in asteroids:
             if item.collides_with(player):
                 log_event("player_hit")
